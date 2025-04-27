@@ -1,0 +1,227 @@
+:root {
+    --bg-color: #0a0f18; /* Dark blue/black */
+    --primary-color: #00aaff; /* Bright blue */
+    --secondary-color: #1a2a40; /* Darker blue */
+    --text-color: #e0e0e0; /* Light gray */
+    --accent-color: #00ffcc; /* Bright cyan/green */
+    --border-color: rgba(0, 170, 255, 0.3);
+    --glow-color: rgba(0, 170, 255, 0.6);
+    --button-bg: rgba(0, 170, 255, 0.1);
+    --button-hover-bg: rgba(0, 170, 255, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative; /* Needed for pseudo-element */
+}
+
+/* Scanlines effect */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.04));
+    background-size: 100% 4px, 6px 100%;
+    z-index: 1;
+    animation: flicker 0.1s infinite;
+    opacity: 0.5;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.4; }
+  25% { opacity: 0.5; }
+  50% { opacity: 0.35; }
+  75% { opacity: 0.6; }
+  100% { opacity: 0.4; }
+}
+
+
+.site-header {
+    text-align: center;
+    padding: 30px 20px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: linear-gradient(to bottom, rgba(10, 15, 24, 0.9), rgba(10, 15, 24, 0.7));
+    position: relative;
+    z-index: 2; /* Above scanlines */
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px var(--glow-color));
+}
+
+.site-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px var(--glow-color);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 0;
+}
+
+.dashboard {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    position: relative;
+    z-index: 2; /* Above scanlines */
+}
+
+.controls {
+    background-color: rgba(26, 42, 64, 0.5); /* Semi-transparent dark blue */
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 25px rgba(0, 170, 255, 0.15);
+}
+
+.controls h2 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 15px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+.control-button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 6px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.1);
+}
+
+.control-button svg {
+    width: 48px;
+    height: 48px;
+    fill: var(--primary-color);
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.control-button span {
+    display: block;
+    line-height: 1.4;
+}
+
+.control-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--glow-color);
+    border-color: var(--primary-color);
+}
+
+.control-button:hover svg {
+    fill: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.control-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px var(--glow-color);
+}
+
+/* Pulse animation */
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 10px rgba(0, 170, 255, 0.1), 0 0 0 0 rgba(0, 170, 255, 0.4); }
+    70% { box-shadow: 0 0 10px rgba(0, 170, 255, 0.1), 0 0 0 10px rgba(0, 170, 255, 0); }
+    100% { box-shadow: 0 0 10px rgba(0, 170, 255, 0.1), 0 0 0 0 rgba(0, 170, 255, 0); }
+}
+
+
+.site-footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: rgba(224, 224, 224, 0.6);
+    border-top: 1px solid var(--border-color);
+    background: linear-gradient(to top, rgba(10, 15, 24, 0.9), rgba(10, 15, 24, 0.7));
+    position: relative;
+    z-index: 2; /* Above scanlines */
+}
+
+/* Formester styling override (optional, if needed) */
+formester-fullscreen {
+    /* You can add styles here to potentially override default widget styles */
+    /* Example: --ff-background-color: var(--bg-color); */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .button-grid {
+        grid-template-columns: 1fr; /* Stack buttons on smaller screens */
+    }
+    .controls {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+     .site-title {
+        font-size: 1.8rem;
+    }
+    .logo {
+        max-width: 80px;
+    }
+    .control-button {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+     .control-button svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+

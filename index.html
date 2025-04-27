@@ -1,0 +1,87 @@
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راصد - نظام الرصد المتقدم</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "formester-fullscreen": "https://xniicrep.formester.com/widget/fullscreen.js"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="scanlines"></div>
+    <header class="site-header">
+        <img src="https://i.postimg.cc/FH4srtHr/logo39.png" alt="شعار راصد" class="logo">
+        <h1 class="site-title">راصـــــــــــــد</h1>
+        <p class="subtitle">لوحة التحكم والمراقبة الاستخباراتية</p>
+    </header>
+
+    <main class="dashboard">
+        <section class="controls">
+            <h2>نماذج الرصد والتحليل</h2>
+            <div class="button-grid">
+                <button class="control-button pulse" onclick="Formester.openFullscreen('okbERHoiM')">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M19.9999 14.9999L19.9999 10.9999L17.9999 10.9999L17.9999 8.99988C17.9999 7.89531 17.1044 6.99988 15.9999 6.99988L8.9999 6.99988L8.9999 4.99988L6.9999 4.99988L6.9999 18.9999H8.9999L8.9999 16.9999L15.9999 16.9999C17.1044 16.9999 17.9999 16.1044 17.9999 14.9999L17.9999 12.9999L19.9999 12.9999L19.9999 14.9999H21.9999V10.9999L21.9999 8.99988H19.9999L19.9999 14.9999H19.9999ZM15.9999 14.9999H8.9999L8.9999 8.99988L15.9999 8.99988L15.9999 14.9999Z"></path>
+                    </svg>
+                    <span>نموذج أولي (هامش الرصد)</span>
+                </button>
+
+                <button class="control-button pulse" onclick="Formester.openFullscreen('5HQojDdZJ')">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3ZM11 17H5V15H11V17ZM11 13H5V11H11V13ZM11 9H5V7H11V9ZM19 17H13V15H19V17ZM19 13H13V11H19V13ZM19 9H13V7H19V9Z"></path>
+                    </svg>
+                    <span>رصد منشور تفصيلي (رئيسي)</span>
+                </button>
+
+                <button class="control-button pulse" onclick="Formester.openFullscreen('wIGLe8weM')">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M12.8783 1.07735L23.6033 19.5774C24.0999 20.461 23.502 21.5 22.4764 21.5H1.52361C0.497999 21.5 -0.0998973 20.461 0.396677 19.5774L11.1217 1.07735C11.5831 0.266402 12.4169 0.266403 12.8783 1.07735ZM12 18C12.5523 18 13 17.5523 13 17C13 16.4477 12.5523 16 12 16C11.4477 16 11 16.4477 11 17C11 17.5523 11.4477 18 12 18ZM13 14H11V8H13V14Z"></path>
+                    </svg>
+                    <span>نموذج رصد شائعة</span>
+                </button>
+
+                 <!-- Add more buttons here in the future -->
+                 <!--
+                 <button class="control-button pulse" onclick="Formester.openFullscreen('NEW_FORM_ID')">
+                    <svg>...</svg>
+                    <span>New Monitoring Type</span>
+                 </button>
+                 -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <p>&copy; 2024 نظام راصد. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- Formester Fullscreen Widgets -->
+    <formester-fullscreen
+        id="okbERHoiM"
+        url="https://xniicrep.formester.com/f/okbERHoiM"
+    ></formester-fullscreen>
+    <formester-fullscreen
+        id="5HQojDdZJ"
+        url="https://xniicrep.formester.com/f/5HQojDdZJ"
+    ></formester-fullscreen>
+    <formester-fullscreen
+        id="wIGLe8weM"
+        url="https://xniicrep.formester.com/f/wIGLe8weM"
+    ></formester-fullscreen>
+
+    <script type="module">
+        import 'formester-fullscreen';
+        // Any additional JS can go here or in script.js
+        console.log("راصد Interface Initialized.");
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
